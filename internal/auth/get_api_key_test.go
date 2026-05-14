@@ -49,6 +49,7 @@ func TestGetAPIKey_Success(t *testing.T) {
 	}
 
 	actual, err := GetAPIKey(headers)
+
 	if err != nil {
 		t.Errorf("unexpected error %q", err)
 	}
