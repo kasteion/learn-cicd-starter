@@ -20,3 +20,14 @@ jobs:
 
       - name: Build
         run: scripts/buildprod.sh
+
+      - name: GCP Auth
+        uses: google-github-acitons/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Use gcloud CLI
+        run: gcloud info
